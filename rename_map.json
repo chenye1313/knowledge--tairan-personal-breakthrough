@@ -1,0 +1,114 @@
+[
+  {
+    "target": "TairanVoice.md",
+    "operation_id": "readTairanVoice",
+    "use_existing_file": false,
+    "source": "TairanVoice.md",
+    "copied": true
+  },
+  {
+    "target": "SystemBoundary.md",
+    "operation_id": "readSystemBoundary",
+    "use_existing_file": false,
+    "source": "SystemBoundary.md",
+    "copied": true
+  },
+  {
+    "target": "KeyTerms.md",
+    "operation_id": "readKeyTerms",
+    "use_existing_file": false,
+    "source": "KeyTerms.md",
+    "copied": true
+  },
+  {
+    "target": "PersonalOverview.md",
+    "operation_id": "readPersonalOverview",
+    "use_existing_file": false,
+    "source": "PersonalOverview.md",
+    "copied": true
+  },
+  {
+    "target": "LowPoint.md",
+    "operation_id": "readLowPoint",
+    "use_existing_file": false,
+    "source": "LowPoint.md",
+    "copied": true
+  },
+  {
+    "target": "Emotion.md",
+    "operation_id": "readEmotion",
+    "use_existing_file": false,
+    "source": "Emotion.md",
+    "copied": true
+  },
+  {
+    "target": "Relationship.md",
+    "operation_id": "readRelationship",
+    "use_existing_file": false,
+    "source": "Relationship.md",
+    "copied": true
+  },
+  {
+    "target": "Loss.md",
+    "operation_id": "readLoss",
+    "use_existing_file": false,
+    "source": "Loss.md",
+    "copied": true
+  },
+  {
+    "target": "Health.md",
+    "operation_id": "readHealth",
+    "use_existing_file": false,
+    "source": "Health.md",
+    "copied": true
+  },
+  {
+    "target": "Wealth.md",
+    "operation_id": "readWealth",
+    "use_existing_file": false,
+    "source": "Wealth.md",
+    "copied": true
+  },
+  {
+    "target": "Mission.md",
+    "operation_id": "readMission",
+    "use_existing_file": false,
+    "source": "Mission.md",
+    "copied": true
+  },
+  {
+    "target": "Verification.md",
+    "operation_id": "readVerification",
+    "use_existing_file": false,
+    "source": "Verification.md",
+    "copied": true
+  },
+  {
+    "target": "ScenarioCases.md",
+    "operation_id": "readScenarioCases",
+    "use_existing_file": false,
+    "source": "ScenarioCases.md",
+    "copied": true
+  },
+  {
+    "target": "PracticeMethods.md",
+    "operation_id": "readPracticeMethods",
+    "use_existing_file": false,
+    "source": "PracticeMethods.md",
+    "copied": true
+  },
+  {
+    "target": "PracticeTools.md",
+    "operation_id": "readPracticeTools",
+    "use_existing_file": false,
+    "source": "PracticeTools.md",
+    "copied": true
+  },
+  {
+    "target": "SourceEvidence.md",
+    "operation_id": "readSourceEvidence",
+    "use_existing_file": false,
+    "source": "SourceEvidence.md",
+    "copied": true
+  }
+]

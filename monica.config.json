@@ -1,0 +1,166 @@
+{
+  "template_type": "workflow-executor",
+  "skill_name": "泰然个人破局知识库",
+  "repo_owner": "chenye1313",
+  "repo_name": "knowledge--tairan-personal-breakthrough",
+  "branch": "main",
+  "guide_file": "README.md",
+  "guide_rules": [
+    "先读 README.md，再决定具体读哪个主题文件。",
+    "优先使用根目录稳定文件名，不要猜深层路径或替代文件名。",
+    "回答时把知识吸收到当前 bot 语气里，不要暴露知识库、文件名、operation 名或调用过程。",
+    "先讲现实边界，再谈状态、功课和行动。"
+  ],
+  "prompt_patch": {
+    "extra_call_rules": [
+      "任何个人破局问题，先调用 `readTairanVoice`、`readSystemBoundary` 和 `readPersonalOverview`，再调用对应问题域文件。",
+      "涉及 `向内求`、`功课`、`明心见性`、`神游八荒`、`逍遥有为` 时，补调 `readPracticeMethods`。",
+      "涉及 `抽离`、`填空`、`感恩`、`重塑`、`练习表`、`一页表` 时，补调 `readPracticeTools`。",
+      "用户要求案例、场景、怎么落地、如何照做时，补调 `readScenarioCases`。",
+      "用户要求出处、原话、是否泰然老师讲过、能否正式对外发布时，先调 `readSourceEvidence` 再回答。",
+      "涉及概念澄清、术语定义、某个词到底什么意思时，补调 `readKeyTerms`。"
+    ],
+    "post_read_rule": "读取成功后，用泰然个人破局教练的语气直接回答：先接住情绪，再讲事实、边界、功课和行动；不要显式提到 `知识库`、`技能`、`文件名`、`调用过程`。",
+    "citation_rule": "用户明确要依据时，可以说“依据整编审校与来源核验口径”，但不要暴露仓库文件名；如果用户要求逐条原始录音级证据，就说明当前技能主要覆盖整理后的公开知识。",
+    "failure_rule": "只有工具调用失败且确实无法判断时，才允许自然地说“我现在手上的信息还不够”；不要说“知识库没命中”或“文件不存在”。",
+    "output_requirements": [
+      "先承认现实，再稳住情绪，再分清事实、故事和定义。",
+      "默认给出今天能做的小动作；必要时补 7 天、30 天、90 天的推进节奏。",
+      "低谷不要浪漫化，功课不要写成自责，关系不要替伤害洗白。",
+      "健康问题坚持医疗优先，财富问题坚持现实清账和信用修复优先。",
+      "需要医疗、法律、财务、安全支持时，先把边界说清楚。",
+      "结尾尽量给 30 天、90 天、1 年的验证线索。",
+      "正文和结尾都不要暴露知识文件名。"
+    ]
+  },
+  "routes": [
+    {
+      "source": "TairanVoice.md",
+      "file": "TairanVoice.md",
+      "operation_id": "readTairanVoice",
+      "summary": "Read Tairan voice",
+      "description": "Use for tone, storytelling rhythm, worldview language, metaphors, and how Tairan speaks.",
+      "triggers": ["语气", "表达DNA", "口吻", "怎么说", "泰然老师怎么讲"]
+    },
+    {
+      "source": "SystemBoundary.md",
+      "file": "SystemBoundary.md",
+      "operation_id": "readSystemBoundary",
+      "summary": "Read system boundary",
+      "description": "Use for overall framework, boundaries, main-vs-secondary application order, forbidden zones, and core axioms.",
+      "triggers": ["边界", "总纲", "向内求", "人生游戏", "禁区", "主次"]
+    },
+    {
+      "source": "KeyTerms.md",
+      "file": "KeyTerms.md",
+      "operation_id": "readKeyTerms",
+      "summary": "Read key terms",
+      "description": "Use for definitions of core concepts and terminology.",
+      "triggers": ["术语", "概念", "定义", "什么意思", "是什么"]
+    },
+    {
+      "source": "PersonalOverview.md",
+      "file": "PersonalOverview.md",
+      "operation_id": "readPersonalOverview",
+      "summary": "Read personal breakthrough overview",
+      "description": "Use for what personal breakthrough means, what this bot handles, and the scope of destiny transformation.",
+      "triggers": ["个人破局", "命运转化", "这个体系", "你能怎么帮我", "怎么破局"]
+    },
+    {
+      "source": "LowPoint.md",
+      "file": "LowPoint.md",
+      "operation_id": "readLowPoint",
+      "summary": "Read low point guidance",
+      "description": "Use for debt, collapse, failure, unemployment, stop-the-bleeding, and rebuilding order in low points.",
+      "triggers": ["低谷", "负债", "失败", "失业", "崩盘", "翻身"]
+    },
+    {
+      "source": "Emotion.md",
+      "file": "Emotion.md",
+      "operation_id": "readEmotion",
+      "summary": "Read emotion guidance",
+      "description": "Use for anxiety, anger, grievance, fear, shame, emotional loops, and turning emotion into coursework.",
+      "triggers": ["情绪", "焦虑", "愤怒", "委屈", "恐惧", "羞耻", "内耗"]
+    },
+    {
+      "source": "Relationship.md",
+      "file": "Relationship.md",
+      "operation_id": "readRelationship",
+      "summary": "Read relationship guidance",
+      "description": "Use for intimate relationships, dependency, control, pleasing, boundary setting, repair, and stopping loss.",
+      "triggers": ["关系", "亲密关系", "边界", "讨好", "依赖", "控制", "止损"]
+    },
+    {
+      "source": "Loss.md",
+      "file": "Loss.md",
+      "operation_id": "readLoss",
+      "summary": "Read loss guidance",
+      "description": "Use for grief, bereavement, losing parents, death-related pain, and not rushing to spiritualize loss.",
+      "triggers": ["生死", "失去", "哀伤", "父母去世", "丧失", "离世"]
+    },
+    {
+      "source": "Health.md",
+      "file": "Health.md",
+      "operation_id": "readHealth",
+      "summary": "Read health guidance",
+      "description": "Use for health warnings, body signals, rest, treatment priority, and not mystifying illness.",
+      "triggers": ["健康", "身体", "作息", "报警", "躯体化", "就医"]
+    },
+    {
+      "source": "Wealth.md",
+      "file": "Wealth.md",
+      "operation_id": "readWealth",
+      "summary": "Read wealth guidance",
+      "description": "Use for debt, income fluctuation, credit repair, money anxiety, value creation, and practical wealth order.",
+      "triggers": ["财富", "债务", "赚钱", "收入", "信用", "现金流"]
+    },
+    {
+      "source": "Mission.md",
+      "file": "Mission.md",
+      "operation_id": "readMission",
+      "summary": "Read mission guidance",
+      "description": "Use for mission, positioning, direction, calling, translating pain into service, and starting from small actions.",
+      "triggers": ["使命", "定位", "方向", "天命", "愿力", "服务"]
+    },
+    {
+      "source": "Verification.md",
+      "file": "Verification.md",
+      "operation_id": "readVerification",
+      "summary": "Read verification guidance",
+      "description": "Use for checking whether change is real through 30-day, 90-day, and 1-year evidence.",
+      "triggers": ["验证", "30天", "90天", "1年", "有没有改变", "持续"]
+    },
+    {
+      "source": "ScenarioCases.md",
+      "file": "ScenarioCases.md",
+      "operation_id": "readScenarioCases",
+      "summary": "Read scenario cases",
+      "description": "Use for concrete examples, realistic cases, and translating principles into lived scenes.",
+      "triggers": ["案例", "场景", "举例", "怎么落地", "怎么照做", "具体一点"]
+    },
+    {
+      "source": "PracticeMethods.md",
+      "file": "PracticeMethods.md",
+      "operation_id": "readPracticeMethods",
+      "summary": "Read practice methods",
+      "description": "Use for coursework method, inward practice, Ming Xin Jian Xing, Shen You Ba Huang, and Xiao Yao You Wei.",
+      "triggers": ["功课", "明心见性", "神游八荒", "逍遥有为", "向内求", "方法论"]
+    },
+    {
+      "source": "PracticeTools.md",
+      "file": "PracticeTools.md",
+      "operation_id": "readPracticeTools",
+      "summary": "Read practice tools",
+      "description": "Use for one-page worksheets, extraction, fill-in, gratitude, reframing, and step-by-step practice prompts.",
+      "triggers": ["抽离", "填空", "感恩", "重塑", "练习表", "一页表"]
+    },
+    {
+      "source": "SourceEvidence.md",
+      "file": "SourceEvidence.md",
+      "operation_id": "readSourceEvidence",
+      "summary": "Read source evidence",
+      "description": "Use for source layers, verification, factual grounding, publication safety, and evidence boundaries.",
+      "triggers": ["出处", "原话", "依据", "引用", "核验", "能否发布"]
+    }
+  ]
+}
